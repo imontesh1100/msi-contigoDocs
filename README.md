@@ -188,10 +188,25 @@ _*Parametro obligatorio_
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
 |             | `c_honor_id[string]*`    |
-| Success Response | `{"data":{"persona":{"nombre":"---","descripcion":"----","anio":"---","mes":"---","imagen":"---"}},"status":true}`  |
+| Success Response | `{"data":{"persona":{"filial_id":--,"nombre":"--","descripcion":"--","anio":"--","mes":"--","imagen":"--","fecha_unix":--}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro c_honor_id es obligatorio"},"status":true}`  |
 |                | `{"data":{"msg":"No existe registro de esa persona en el cuadro de honor"},"status":true}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Obtener Detalle de persona del mes anterior | 
+| :------------ |:---------------    | 
+| URL         | `/services/getC_HonorDetailPreviusMonth`   |
+| Metodo      | **GET**             |
+| Parametros  | `token[string]*`    |
+|             | `filial_id[string]*`    |
+|             | `fecha_unix[string]*`    |
+| Success Response | `{"data":{"persona":{"filial_id":--,"nombre":"--","descripcion":"--","anio":"--","mes":"--","imagen":"--","fecha_unix":--}},"status":true}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
+|                | `{"data":{"msg":"No existe registro para el mes: -----"},"status":true}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
 
 _*Parametro obligatorio_
