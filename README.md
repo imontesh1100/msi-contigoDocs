@@ -22,7 +22,7 @@ _*Parametro obligatorio_
 | Metodo      | **POST**             |
 | Parametros  | `numero_empleado[string]*`    |
 |             | `email[string]*`     | 
-| Success Response | `{"data":{"msg":"Tu nueva contraseña es:--------"},"status":true}`  |
+| Success Response | `{"data":{"msg":"Se ha enviado un mail con las instrucciones para recuperar tu contraseña"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido restaurar la contraseña, asegurate que el email y el numero de empleado sean correctos"},"status":false}`  |
 |                | `{"data":{"msg":"No se ha podido restaurar la contraseña,intentalo mas tarde"},"status":false}`  |
 
