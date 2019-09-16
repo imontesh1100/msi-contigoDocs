@@ -78,7 +78,7 @@ _*Parametro obligatorio_
 | URL         | `/services/getNoticias`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `qty[string]`    |
+|             | `qty[int]`    |
 | Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","fecha":"----","imagen":"-----"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"No hay noticias"},"status":true}`  |
@@ -91,8 +91,8 @@ _*Parametro obligatorio_
 | URL         | `/services/getNoticiasByFilial`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `qty[string]`    |
-|             | `filial_id[string]*`    |
+|             | `qty[int]`    |
+|             | `filial_id[int]*`    |
 | Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","fecha":"--","imagen":"---"},{"id":-,"titulo":"---","fecha":"----","imagen":"---"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
@@ -106,7 +106,7 @@ _*Parametro obligatorio_
 | URL         | `/services/noticiaDetail`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `noticia_id[string]*`    |
+|             | `noticia_id[int]*`    |
 | Success Response | `{"data":{"noticia":{"titulo":"----","contenido":"---","autor":"--","categoria":"---","fecha":"--","filial":"---","imagen":"---"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro noticia_id es obligatorio"},"status":true}`  |
@@ -120,7 +120,7 @@ _*Parametro obligatorio_
 | URL         | `/services/getMural`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `filial_id[string]*`    |
+|             | `filial_id[int]*`    |
 | Success Response | `{"{"data":{"mural":{"id":-,"titulo":"--","subtitulo":"---","filial":"--","imagen":"---"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
@@ -134,7 +134,7 @@ _*Parametro obligatorio_
 | URL         | `/services/muralDetail`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `mural_id[string]*`    |
+|             | `mural_id[int]*`    |
 | Success Response | `{"data":{"mural":{"titulo":"--","subtitulo":"--","contenido":"--","fecha":"--","filial":"--","imagen":"--"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro mural_id es obligatorio"},"status":true}`  |
@@ -148,7 +148,6 @@ _*Parametro obligatorio_
 | URL         | `/services/getRankings`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `mural_id[string]*`    |
 | Success Response | `{"data":{"rankings":[{"filial":"---","valor":--","signo":"="},{"filial":"---","valor":"--","signo":"="},{"filial":"---","valor":"--","signo":"="}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -172,8 +171,8 @@ _*Parametro obligatorio_
 | URL         | `/services/getC_Honor`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `filial_id[string]*`    |
-|             | `qty[string]`    |
+|             | `filial_id[int]*`    |
+|             | `qty[int]`    |
 | Success Response | `{"data":{"filial":"--","personas":[{"id":-,"nombre":"---","fecha":"-- --","imagen":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
@@ -187,7 +186,7 @@ _*Parametro obligatorio_
 | URL         | `/services/getC_HonorDetail`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `c_honor_id[string]*`    |
+|             | `c_honor_id[int]*`    |
 | Success Response | `{"data":{"persona":{"filial_id":--,"nombre":"--","descripcion":"--","anio":"--","mes":"--","imagen":"--","fecha_unix":--}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro c_honor_id es obligatorio"},"status":true}`  |
@@ -201,7 +200,7 @@ _*Parametro obligatorio_
 | URL         | `/services/getC_HonorDetailPreviusMonth`   |
 | Metodo      | **GET**             |
 | Parametros  | `token[string]*`    |
-|             | `filial_id[string]*`    |
+|             | `filial_id[int]*`    |
 |             | `fecha_unix[string]*`    |
 | Success Response | `{"data":{"persona":{"filial_id":--,"nombre":"--","descripcion":"--","anio":"--","mes":"--","imagen":"--","fecha_unix":--}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
@@ -228,7 +227,7 @@ _*Parametro obligatorio_
 | URL         | `/services/newMensaje`   |
 | Metodo      | **POST**             |
 | Parametros  | `token[string]*`    |
-|             | `area_id[string]*`    |
+|             | `area_id[int]*`    |
 |             | `msg[string]*`    |
 | Success Response | `{"data":{"msg":"Mensaje enviado con exito!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido enviar tu mensaje,intentalo mas tarde"},"status":false}`  |
