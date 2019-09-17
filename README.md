@@ -6,7 +6,8 @@
 | :------------ |:---------------    | 
 | URL         | `/services/login`   |
 | Metodo      | **POST**             |
-| Parametros  | `numero_empleado[string]*`    |
+| Headers         | `---`   |
+| Params(Body)  | `numero_empleado[string]*`    |
 |             | `email[string]*`     | 
 |             | `password[string]*`  |
 | Success Response | `{"data":{"msg":"Inicio de Sesión exitoso!!!","token":"-----------"},"status":true}`  |
@@ -20,7 +21,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/restorePassword`   |
 | Metodo      | **POST**             |
-| Parametros  | `numero_empleado[string]*`    |
+| Headers         | `---`   |
+| Params(Body)  | `numero_empleado[string]*`    |
 |             | `email[string]*`     | 
 | Success Response | `{"data":{"msg":"Se ha enviado un mail con las instrucciones para recuperar tu contraseña"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido restaurar la contraseña, asegurate que el email y el numero de empleado sean correctos"},"status":false}`  |
@@ -32,7 +34,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getEmpleadoInfo`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"informacion":{"nombre":"---","email":"----","numero":"-----"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -44,7 +47,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getFiliales`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -55,7 +59,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getAreas`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"areas":[{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -66,7 +71,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getFAQ`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"preguntas":[{"pregunta":"---","respuesta":"-----"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -75,11 +81,11 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Noticias  | 
 | :------------ |:---------------    | 
-| URL         | `/services/getNoticias`   |
+| URL         | `/services/getNoticias/{qty[int]}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `qty[int]`    |
-| Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","fecha":"----","imagen":"-----"}]},"status":true}`  |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","categoria":"---","fecha":"----","imagen":"-----"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"No hay noticias"},"status":true}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -88,12 +94,11 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Noticias por Filial | 
 | :------------ |:---------------    | 
-| URL         | `/services/getNoticiasByFilial`   |
+| URL         | `/services/getNoticiasByFilial/{filial_id[int]*}/{qty[int]}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `qty[int]`    |
-|             | `filial_id[int]*`    |
-| Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","fecha":"--","imagen":"---"},{"id":-,"titulo":"---","fecha":"----","imagen":"---"}]},"status":true}`  |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","categoria":"----","fecha":"--","imagen":"---"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
 |                | `{"data":{"msg":"No hay noticias"},"status":true}`  |
@@ -103,10 +108,10 @@ _*Parametro obligatorio_
 
 | Titulo      | Detalle de Noticia | 
 | :------------ |:---------------    | 
-| URL         | `/services/noticiaDetail`   |
+| URL         | `/services/noticiaDetail/{noticia_id[int]*}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `noticia_id[int]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"noticia":{"titulo":"----","contenido":"---","autor":"--","categoria":"---","fecha":"--","filial":"---","imagen":"---"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro noticia_id es obligatorio"},"status":true}`  |
@@ -117,10 +122,10 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Mural | 
 | :------------ |:---------------    | 
-| URL         | `/services/getMural`   |
+| URL         | `/services/getMural/{filial_id[int]*}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `filial_id[int]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"{"data":{"mural":{"id":-,"titulo":"--","subtitulo":"---","filial":"--","imagen":"---"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
@@ -131,10 +136,10 @@ _*Parametro obligatorio_
 
 | Titulo      | Detalle Mural | 
 | :------------ |:---------------    | 
-| URL         | `/services/muralDetail`   |
+| URL         | `/services/muralDetail/{mural_id[int]*}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `mural_id[int]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"mural":{"titulo":"--","subtitulo":"--","contenido":"--","fecha":"--","filial":"--","imagen":"--"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro mural_id es obligatorio"},"status":true}`  |
@@ -147,7 +152,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getRankings`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"rankings":[{"filial":"---","valor":--","signo":"="},{"filial":"---","valor":"--","signo":"="},{"filial":"---","valor":"--","signo":"="}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -158,8 +164,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/updateOneSignal`   |
 | Metodo      | **POST**             |
-| Parametros  | `token[string]*`    |
-|             | `onesignal[string]*`   |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `onesignal[string]*`    |
 | Success Response | `{"data":{"msg":"Actualizacion exitosa!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
@@ -168,11 +174,10 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Cuadro de Honor | 
 | :------------ |:---------------    | 
-| URL         | `/services/getC_Honor`   |
+| URL         | `/services/getC_Honor/{filial_id[int]*}/{qty[int]}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `filial_id[int]*`    |
-|             | `qty[int]`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"filial":"--","personas":[{"id":-,"nombre":"---","fecha":"-- --","imagen":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
@@ -183,10 +188,10 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Detalle de persona en el Cuadro de Honor | 
 | :------------ |:---------------    | 
-| URL         | `/services/getC_HonorDetail`   |
+| URL         | `/services/getC_HonorDetail/{c_honor_id[int]*}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `c_honor_id[int]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"persona":{"filial_id":--,"nombre":"--","descripcion":"--","anio":"--","mes":"--","imagen":"--","fecha_unix":--}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro c_honor_id es obligatorio"},"status":true}`  |
@@ -197,11 +202,10 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Detalle de persona del mes anterior | 
 | :------------ |:---------------    | 
-| URL         | `/services/getC_HonorDetailPreviusMonth`   |
+| URL         | `/services/getC_HonorDetailPreviusMonth/{filial_id[int]*}/{fecha_unix[int]*}`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
-|             | `filial_id[int]*`    |
-|             | `fecha_unix[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"persona":{"filial_id":--,"nombre":"--","descripcion":"--","anio":"--","mes":"--","imagen":"--","fecha_unix":--}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
@@ -214,7 +218,8 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getAvisos`   |
 | Metodo      | **GET**             |
-| Parametros  | `token[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
 | Success Response | `{"data":{"avisos":[{"emisor":"--","titulo":"--","mensaje":"--","fecha":"--"},{"emisor":"--","titulo":"--","mensaje":"--","fecha":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"No hay avisos"},"status":true}`  |
@@ -226,9 +231,9 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/newMensaje`   |
 | Metodo      | **POST**             |
-| Parametros  | `token[string]*`    |
-|             | `area_id[int]*`    |
-|             | `msg[string]*`    |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)    | `area_id[int]*`    |
+|                 | `msg[string]*`    |
 | Success Response | `{"data":{"msg":"Mensaje enviado con exito!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido enviar tu mensaje,intentalo mas tarde"},"status":false}`  |
 |                | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
