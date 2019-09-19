@@ -122,11 +122,11 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Mural | 
 | :------------ |:---------------    | 
-| URL         | `/services/getMural/{filial_id[int]*}`   |
+| URL         | `/services/getMurales/{filial_id[int]*}`   |
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
-| Success Response | `{"{"data":{"mural":{"id":-,"titulo":"--","subtitulo":"---","filial":"--","imagen":"---"}},"status":true}`  |
+| Success Response | `{"{"data":{"murales":[{"id":-,"titulo":"--","subtitulo":"---","filial":"--","imagen":"---"},{"id":-,"titulo":"--","subtitulo":"---","filial":"--","imagen":"---"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
 |                | `{"data":{"msg":"No existe el mural"},"status":true}`  |
