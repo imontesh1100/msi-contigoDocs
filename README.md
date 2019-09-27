@@ -233,7 +233,7 @@ _*Parametro obligatorio_
 | Metodo      | **POST**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)    | `area_id[int]*`    |
-|                 | `msg[string]*`    |
+|                 | `mensaje[string]*`    |
 | Success Response | `{"data":{"msg":"Mensaje enviado con exito!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido enviar tu mensaje,intentalo mas tarde"},"status":false}`  |
 |                | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
