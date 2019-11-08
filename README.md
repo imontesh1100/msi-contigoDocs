@@ -17,6 +17,21 @@
 
 _*Parametro obligatorio_
 
+| Titulo      | Crear Solicitud  | 
+| :------------ |:---------------    | 
+| URL         | `/services/newSolicitud`   |
+| Metodo      | **POST**             |
+| Headers         | `---`   |
+| Params(Body)  | `numero_empleado[string]*`    |
+|             | `email[string]*`     | 
+| Success Response | `{"data":{"msg":"Solicitud creada exitosamente!!!"},"status":true}`  |
+| Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
+|                | `{"data":{"msg":"Ya existe un empleado con esos datos"},"status":false}`  |
+|                | `{"data":{"msg":"Ya existe una solicitud con esos datos"},"status":false}`  |
+|                | `{"data":{"msg":"Ha ocurrido un error al crear la solicitud"},"status":false}`  |
+
+_*Parametro obligatorio_
+
 | Titulo      | Restaurar Contraseña  | 
 | :------------ |:---------------    | 
 | URL         | `/services/restorePassword`   |
@@ -37,19 +52,6 @@ _*Parametro obligatorio_
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
 | Success Response | `{"data":{"informacion":{"nombre":"---","email":"----","numero":"-----"}},"status":true}`  |
-| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
-|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
-
-
-_*Parametro obligatorio_
-
-| Titulo      | Obtener Filiales  | 
-| :------------ |:---------------    | 
-| URL         | `/services/getFiliales`   |
-| Metodo      | **GET**             |
-| Headers         | `Authorization: token[string]`   |
-| Params(Body)  | `---`    |
-| Success Response | `{"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
 
@@ -92,20 +94,6 @@ _*Parametro obligatorio_
 
 _*Parametro obligatorio_
 
-| Titulo      | Obtener Noticias por Filial | 
-| :------------ |:---------------    | 
-| URL         | `/services/getNoticiasByFilial/{filial_id[int]*}/{qty[int]}`   |
-| Metodo      | **GET**             |
-| Headers         | `Authorization: token[string]`   |
-| Params(Body)  | `---`    |
-| Success Response | `{"data":{"noticias":[{"id":-,"titulo":"---","categoria":"----","fecha":"--","imagen":"---"}]},"status":true}`  |
-| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
-|                | `{"data":{"msg":"El parametro filial_id es obligatorio"},"status":true}`  |
-|                | `{"data":{"msg":"No hay noticias"},"status":true}`  |
-|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
-
-_*Parametro obligatorio_
-
 | Titulo      | Detalle de Noticia | 
 | :------------ |:---------------    | 
 | URL         | `/services/noticiaDetail/{noticia_id[int]*}`   |
@@ -122,7 +110,7 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Mural | 
 | :------------ |:---------------    | 
-| URL         | `/services/getMurales/{filial_id[int]*}`   |
+| URL         | `/services/getMurales`   |
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
@@ -148,18 +136,6 @@ _*Parametro obligatorio_
 
 _*Parametro obligatorio_
 
-| Titulo      | Obtener Rankings | 
-| :------------ |:---------------    | 
-| URL         | `/services/getRankings`   |
-| Metodo      | **GET**             |
-| Headers         | `Authorization: token[string]`   |
-| Params(Body)  | `---`    |
-| Success Response | `{"data":{"rankings":[{"filial":"---","valor":--","signo":"="},{"filial":"---","valor":"--","signo":"="},{"filial":"---","valor":"--","signo":"="}]},"status":true}`  |
-| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
-|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
-
-_*Parametro obligatorio_
-
 | Titulo      | Actualizar OneSignal | 
 | :------------ |:---------------    | 
 | URL         | `/services/updateOneSignal`   |
@@ -174,7 +150,7 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Cuadro de Honor | 
 | :------------ |:---------------    | 
-| URL         | `/services/getC_Honor/{filial_id[int]*}/{qty[int]}`   |
+| URL         | `/services/getC_Honor/{qty[int]}`   |
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
