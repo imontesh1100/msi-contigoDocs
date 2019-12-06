@@ -34,10 +34,12 @@ _*Parametro obligatorio_
 | Headers         | `---`   |
 | Params(Body)  | `numero_empleado[string]*`    |
 |             | `email[string]*`     | 
+|             | `filial_id[string]*`     | 
 | Success Response | `{"data":{"msg":"Solicitud creada exitosamente!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
 |                | `{"data":{"msg":"Ya existe un empleado con esos datos"},"status":false}`  |
 |                | `{"data":{"msg":"Ya existe una solicitud con esos datos"},"status":false}`  |
+|                | `{"data":{"msg":"La filial --- no existe"},"status":false}`  |
 |                | `{"data":{"msg":"Ha ocurrido un error al crear la solicitud"},"status":false}`  |
 
 _*Parametro obligatorio_
