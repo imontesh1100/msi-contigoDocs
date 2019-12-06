@@ -17,6 +17,16 @@
 
 _*Parametro obligatorio_
 
+| Titulo      | Obtener Filiales  | 
+| :------------ |:---------------    | 
+| URL         | `/services/getFiliales`   |
+| Metodo      | **GET**             |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+
+_*Parametro obligatorio_
+
 | Titulo      | Crear Solicitud  | 
 | :------------ |:---------------    | 
 | URL         | `/services/newSolicitud`   |
