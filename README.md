@@ -7,9 +7,7 @@
 | URL         | `/services/login`   |
 | Metodo      | **POST**             |
 | Headers         | `---`   |
-| Params(Body)  | `numero_empleado[string]*`    |
-|             | `email[string]*`     | 
-|             | `password[string]*`  |
+| Params(Body)  | `email[string]*`    |
 | Success Response | `{"data":{"msg":"Inicio de Sesión exitoso!!!","token":"-----------"},"status":true}`  |
 | Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
 |                | `{"data":{"msg":"No se ha podido Iniciar Sesión, asegurate que los campos sean correctos"},"status":false}`  |
@@ -21,39 +19,24 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getFiliales`   |
 | Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
 | Success Response | `{"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 
 _*Parametro obligatorio_
 
-| Titulo      | Crear Solicitud  | 
+| Titulo      | Crear Usuario  | 
 | :------------ |:---------------    | 
-| URL         | `/services/newSolicitud`   |
+| URL         | `/services/createUser`   |
 | Metodo      | **POST**             |
 | Headers         | `---`   |
-| Params(Body)  | `numero_empleado[string]*`    |
+| Params(Body)  | `nombre[string]*`    |
 |             | `email[string]*`     | 
-|             | `filial_id[string]*`     | 
-| Success Response | `{"data":{"msg":"Solicitud creada exitosamente!!!"},"status":true}`  |
+| Success Response | `{"data":{"msg":"Cuenta creada exitosamente!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
-|                | `{"data":{"msg":"Ya existe un empleado con esos datos"},"status":false}`  |
-|                | `{"data":{"msg":"Ya existe una solicitud con esos datos"},"status":false}`  |
-|                | `{"data":{"msg":"La filial --- no existe"},"status":false}`  |
-|                | `{"data":{"msg":"Ha ocurrido un error al crear la solicitud"},"status":false}`  |
-
-_*Parametro obligatorio_
-
-| Titulo      | Restaurar Contraseña  | 
-| :------------ |:---------------    | 
-| URL         | `/services/restorePassword`   |
-| Metodo      | **POST**             |
-| Headers         | `---`   |
-| Params(Body)  | `numero_empleado[string]*`    |
-|             | `email[string]*`     | 
-| Success Response | `{"data":{"msg":"Se ha enviado un mail con las instrucciones para recuperar tu contraseña"},"status":true}`  |
-| Error Response | `{"data":{"msg":"No se ha podido restaurar la contraseña, asegurate que el email y el numero de empleado sean correctos"},"status":false}`  |
-|                | `{"data":{"msg":"No se ha podido restaurar la contraseña,intentalo mas tarde"},"status":false}`  |
+|                | `{"data":{"msg":"Ya existe una cuenta con esos datos"},"status":false}`  |
+|                | `{"data":{"msg":"Ha ocurrido un error al crear la cuenta"},"status":false}`  |
 
 _*Parametro obligatorio_
 
@@ -63,7 +46,7 @@ _*Parametro obligatorio_
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
-| Success Response | `{"data":{"informacion":{"nombre":"---","email":"----","numero":"-----"}},"status":true}`  |
+| Success Response | `{"data":{"informacion":{"nombre":"---","email":"----"}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
 
