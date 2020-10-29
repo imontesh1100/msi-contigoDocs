@@ -145,7 +145,7 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Cuadro de Honor | 
 | :------------ |:---------------    | 
-| URL         | `/services/getC_Honor/{qty[int]}`   |
+| URL         | `/services/getC_Honor/{filial_id[int]*`   |
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
