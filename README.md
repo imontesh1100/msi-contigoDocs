@@ -1,4 +1,4 @@
-**MSI-Contigo Services Documentation**
+**MSI-Contigo Documentación**
 ----
   _A continuacion se muestra de forma general cada uno de los servicios creados para la aplicacion movil MSI-Contigo, se incluye toda la información necesaria para hacer las peticiones correspondientes._
 
@@ -78,7 +78,7 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Noticias  | 
 | :------------ |:---------------    | 
-| URL         | `/services/getNoticias/{qty[int]}`   |
+| URL         | `/services/getNoticias`   |
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
