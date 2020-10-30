@@ -54,7 +54,7 @@ _*Parametro obligatorio_
 
 | Titulo      | Obtener Areas  | 
 | :------------ |:---------------    | 
-| URL         | `/services/getAreas`   |
+| URL         | `/services/getAreas/{filial_id[int]*}`   |
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
