@@ -205,9 +205,63 @@ _*Parametro obligatorio_
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)    | `area_id[int]*`    |
 |                 | `mensaje[string]*`    |
+|                 | `filial_id[int]*`    |
+|                 | `seri[boolean]*`    |
 | Success Response | `{"data":{"msg":"Mensaje enviado con exito!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido enviar tu mensaje,intentalo mas tarde"},"status":false}`  |
 |                | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Obtener Agenda | 
+| :------------ |:---------------    | 
+| URL         | `/services/getAgenda/{filial_id[int]*}`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"agenda":[{"id": -,"titulo": "---","fecha": "--/--/----","imagen": "/images/agenda/-.jpg"},{"id": -,"titulo": "----",              "fecha": "--/--/----","imagen": "/images/agenda/-.jpg"}]},"status": true}`|
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"No existe información disponible :("},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Agenda detalle | 
+| :------------ |:---------------    | 
+| URL         | `/services/agendaDetail/{agenda_id[int]*}`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"id": -,"titulo": "---","fecha": "--/--/----","imagen": "/images/agenda/-.jpg"},"status": true}`|
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"No existe información disponible :("},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Obtener Beneficios | 
+| :------------ |:---------------    | 
+| URL         | `/services/getBeneficios`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"beneficios":[{"id": -,"titulo": "---","fecha": "--/--/----","imagen": "/images/beneficios/-.jpg"},{"id": -,"titulo": "----",              "fecha": "--/--/----","imagen": "/images/beneficios/-.jpg"}]},"status": true}`|
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"No existe información disponible :("},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Beneficio detalle | 
+| :------------ |:---------------    | 
+| URL         | `/services/beneficioDetail/{beneficio_id[int]*}`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"id": -,"titulo": "---","fecha": "--/--/----","imagen": "/images/beneficios/-.jpg"},"status": true}`|
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"No existe información disponible :("},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
 
 _*Parametro obligatorio_
