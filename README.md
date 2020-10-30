@@ -1,6 +1,20 @@
 **MSI-Contigo Documentación**
 ----
   _A continuacion se muestra de forma general cada uno de los servicios creados para la aplicacion movil MSI-Contigo, se incluye toda la información necesaria para hacer las peticiones correspondientes._
+  
+| Titulo      | Crear Usuario  | 
+| :------------ |:---------------    | 
+| URL         | `/services/createUser`   |
+| Metodo      | **POST**             |
+| Headers         | `---`   |
+| Params(Body)  | `nombre[string]*`    |
+|             | `email[string]*`     | 
+| Success Response | `{"data":{"msg":"Cuenta creada exitosamente!!!"},"status":true}`  |
+| Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
+|                | `{"data":{"msg":"Ya existe una cuenta con esos datos"},"status":false}`  |
+|                | `{"data":{"msg":"Ha ocurrido un error al crear la cuenta"},"status":false}`  |
+
+_*Parametro obligatorio_
 
 | Titulo      | Inicio de Sesión  | 
 | :------------ |:---------------    | 
@@ -23,20 +37,6 @@ _*Parametro obligatorio_
 | Params(Body)  | `---`    |
 | Success Response | `{"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
-
-_*Parametro obligatorio_
-
-| Titulo      | Crear Usuario  | 
-| :------------ |:---------------    | 
-| URL         | `/services/createUser`   |
-| Metodo      | **POST**             |
-| Headers         | `---`   |
-| Params(Body)  | `nombre[string]*`    |
-|             | `email[string]*`     | 
-| Success Response | `{"data":{"msg":"Cuenta creada exitosamente!!!"},"status":true}`  |
-| Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
-|                | `{"data":{"msg":"Ya existe una cuenta con esos datos"},"status":false}`  |
-|                | `{"data":{"msg":"Ha ocurrido un error al crear la cuenta"},"status":false}`  |
 
 _*Parametro obligatorio_
 
