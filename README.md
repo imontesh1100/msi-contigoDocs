@@ -9,7 +9,7 @@
 | Headers         | `---`   |
 | Params(Body)  | `nombre[string]*`    |
 |             | `email[string]*`     | 
-| Success Response | `{"data":{"msg":"Cuenta creada exitosamente!!!"},"status":true}`  |
+| Success Response | `{"data":{"token":"-----","msg":"Cuenta creada exitosamente!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
 |                | `{"data":{"msg":"Ya existe una cuenta con esos datos"},"status":false}`  |
 |                | `{"data":{"msg":"Ha ocurrido un error al crear la cuenta"},"status":false}`  |
