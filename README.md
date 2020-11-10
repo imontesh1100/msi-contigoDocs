@@ -206,7 +206,7 @@ _*Parametro obligatorio_
 | Params(Body)    | `area_id[int]*`    |
 |                 | `mensaje[string]*`    |
 |                 | `filial_id[int]*`    |
-|                 | `seri[boolean]*`    |
+|                 | `ceri[boolean]*`    |
 | Success Response | `{"data":{"msg":"Mensaje enviado con exito!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido enviar tu mensaje,intentalo mas tarde"},"status":false}`  |
 |                | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
