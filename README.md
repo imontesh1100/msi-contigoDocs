@@ -198,7 +198,7 @@ _*Parametro obligatorio_
 
 _*Parametro obligatorio_
 
-| Titulo      | Obtener Areas  | 
+| Titulo      | Obtener Areas CERI  | 
 | :------------ |:---------------    | 
 | URL         | `/services/getAreasCERI`   |
 | Metodo      | **GET**             |
