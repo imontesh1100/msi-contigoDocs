@@ -198,6 +198,18 @@ _*Parametro obligatorio_
 
 _*Parametro obligatorio_
 
+| Titulo      | Obtener Areas  | 
+| :------------ |:---------------    | 
+| URL         | `/services/getAreasCERI`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"data":{"areas":[{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
 | Titulo      | Enviar mensaje a un Area | 
 | :------------ |:---------------    | 
 | URL         | `/services/newMensaje`   |
@@ -206,6 +218,7 @@ _*Parametro obligatorio_
 | Params(Body)    | `area_id[int]*`    |
 |                 | `mensaje[string]*`    |
 |                 | `filial_id[int]*`    |
+|                 | `ceri_area[int]`    |
 |                 | `ceri[boolean]*`    |
 | Success Response | `{"data":{"msg":"Mensaje enviado con exito!!!"},"status":true}`  |
 | Error Response | `{"data":{"msg":"No se ha podido enviar tu mensaje,intentalo mas tarde"},"status":false}`  |
