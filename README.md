@@ -7,12 +7,12 @@
 | URL         | `/services/createUser`   |
 | Metodo      | **POST**             |
 | Headers         | `---`   |
-| Params(Body)  | `nombre[string]*`    |
+| Params(Body)  | `filial_id[int]*`    |
 |             | `email[string]*`     | 
-| Success Response | `{"data":{"token":"-----","msg":"Cuenta creada exitosamente!!!"},"status":true}`  |
-| Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
-|                | `{"data":{"msg":"Ya existe una cuenta con esos datos"},"status":false}`  |
-|                | `{"data":{"msg":"Ha ocurrido un error al crear la cuenta"},"status":false}`  |
+| Success Response | `{"status":true,"data":{"msg":"Cuenta creada exitosamente!!!"}}`  |
+| Error Response | `{"status":false,"data":{"msg":"Faltan Parametros Obligatorios"}}`  |
+|                | `{"status":false,"data":{"msg":"Ya existe una cuenta con esos datos"}}`  |
+|                | `{"status":false,"data":{"msg":"Ha ocurrido un error al crear la cuenta"}}`  |
 
 _*Parametro obligatorio_
 
@@ -22,10 +22,11 @@ _*Parametro obligatorio_
 | Metodo      | **POST**             |
 | Headers         | `---`   |
 | Params(Body)  | `email[string]*`    |
-| Success Response | `{"data":{"msg":"Inicio de Sesión exitoso!!!","token":"-----------"},"status":true}`  |
-| Error Response | `{"data":{"msg":"Faltan Parametros Obligatorios"},"status":false}`  |
-|                | `{"data":{"msg":"No se ha podido Iniciar Sesión, asegurate que los campos sean correctos"},"status":false}`  |
-|                | `{"data":{"msg":"Ha ocurrido un error al iniciar sesión"},"status":false}`  |
+|             | `codigo[string]*`     |
+| Success Response | `{"status":true,"data":{"msg":"Inicio de Sesión exitoso!!!","token":"-----------"}}`  |
+| Error Response | `{"status":false,"data":{"msg":"Faltan Parametros Obligatorios"}}`  |
+|                | `{"status":false,"data":{"msg":"No se ha podido Iniciar Sesión, asegurate que los campos sean correctos"}}`  |
+|                | `{"status":false,"data":{"msg":"Ha ocurrido un error al iniciar sesión"}}`  |
 
 _*Parametro obligatorio_
 
@@ -35,8 +36,8 @@ _*Parametro obligatorio_
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
-| Success Response | `{"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]},"status":true}`  |
-| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+| Success Response | `{"status":true,"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]}}`  |
+| Error Response | `{"status":false,"data":{"msg":"Ha ocurrido un error"}}`  |
 
 _*Parametro obligatorio_
 
@@ -276,5 +277,44 @@ _*Parametro obligatorio_
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"No existe información disponible :("},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Obtener Videos | 
+| :------------ |:---------------    | 
+| URL         | `/services/getVideos`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"status":true,"data":{"videos":[{"id":-,"titulo":"--","link":"---","imagen":"---"}]}}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"No existen videos disponibles"},"status":true}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Obtener Otros | 
+| :------------ |:---------------    | 
+| URL         | `/services/getOtros`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"status":true,"data":{"otros":[{"id":-,"titulo":"--","link":"---","imagen":"---"}]}}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"No existen elementos disponibles"},"status":true}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Otros detalle | 
+| :------------ |:---------------    | 
+| URL         | `/services/otroDetail/{otro_id[int]*}`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"status": true,"data":{"otro"{"titulo":"","link":"","fecha": "","imagen":"/images/otros/-.jpg"}}}`|
+| Error Response | `{"status":false,"data":{"msg":"Ha ocurrido un error"}}`  |
+|                | `{"status":false,"data":{"msg":"No existe el elemento"}}`  |
+|                | `{"status":false,"data":{"msg":"Token Incorrecto!!!"}}`  |
 
 _*Parametro obligatorio_
