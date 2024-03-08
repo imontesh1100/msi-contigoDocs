@@ -9,6 +9,7 @@
 | Headers         | `---`   |
 | Params(Body)  | `filial_id[int]*`    |
 |             | `email[string]*`     | 
+|             | `codigo[string]*`     |
 | Success Response | `{"status":true,"data":{"msg":"Cuenta creada exitosamente!!!"}}`  |
 | Error Response | `{"status":false,"data":{"msg":"Faltan Parametros Obligatorios"}}`  |
 |                | `{"status":false,"data":{"msg":"Ya existe una cuenta con esos datos"}}`  |
