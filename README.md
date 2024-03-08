@@ -34,7 +34,7 @@ _*Parametro obligatorio_
 | :------------ |:---------------    | 
 | URL         | `/services/getFiliales`   |
 | Metodo      | **GET**             |
-| Headers         | `Authorization: token[string]`   |
+| Headers         | `---`   |
 | Params(Body)  | `---`    |
 | Success Response | `{"status":true,"data":{"filiales":[{"id":-,"nombre":"---"},{"id":-,"nombre":"--"},{"id":-,"nombre":"--"}]}}`  |
 | Error Response | `{"status":false,"data":{"msg":"Ha ocurrido un error"}}`  |
