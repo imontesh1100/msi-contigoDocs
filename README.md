@@ -319,3 +319,15 @@ _*Parametro obligatorio_
 |                | `{"status":false,"data":{"msg":"Token Incorrecto!!!"}}`  |
 
 _*Parametro obligatorio_
+
+| Titulo      | Obtener Bbletin | 
+| :------------ |:---------------    | 
+| URL         | `/services/getBoletin`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"status":true,"data":{"boletin":"----.pdf"}}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
