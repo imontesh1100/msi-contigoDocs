@@ -320,7 +320,7 @@ _*Parametro obligatorio_
 
 _*Parametro obligatorio_
 
-| Titulo      | Obtener Bbletin | 
+| Titulo      | Obtener boletin | 
 | :------------ |:---------------    | 
 | URL         | `/services/getBoletin`   |
 | Metodo      | **GET**             |
