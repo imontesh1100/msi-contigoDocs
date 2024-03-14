@@ -313,7 +313,7 @@ _*Parametro obligatorio_
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
-| Success Response | `{"status": true,"data":{"otro"{"titulo":"","link":"","fecha": "","imagen":"/images/otros/-.jpg"}}}`|
+| Success Response | `{"status": true,"data":{"otro"{"titulo":"","link":"","descripcion":"","fecha": "","imagen":"/images/otros/-.jpg"}}}`|
 | Error Response | `{"status":false,"data":{"msg":"Ha ocurrido un error"}}`  |
 |                | `{"status":false,"data":{"msg":"No existe el elemento"}}`  |
 |                | `{"status":false,"data":{"msg":"Token Incorrecto!!!"}}`  |
