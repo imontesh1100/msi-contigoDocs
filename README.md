@@ -300,7 +300,7 @@ _*Parametro obligatorio_
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
-| Success Response | `{"status":true,"data":{"otros":[{"id":-,"titulo":"--","link":"---","imagen":"---"}]}}`  |
+| Success Response | `{"status":true,"data":{"otros":[{"id":-,"titulo":"--","descripcion":"","link":"---","imagen":"---"}]}}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"No existen elementos disponibles"},"status":true}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
