@@ -48,7 +48,7 @@ _*Parametro obligatorio_
 | Metodo      | **GET**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)  | `---`    |
-| Success Response | `{"data":{"informacion":{"nombre":"---","email":"----"}},"status":true}`  |
+| Success Response | `{"data":{"informacion":{"nombre":"---","email":"----","filial_id":-}},"status":true}`  |
 | Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
 
