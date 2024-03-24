@@ -17,6 +17,18 @@
 
 _*Parametro obligatorio_
 
+| Titulo      | Eliminar usuario  | 
+| :------------ |:---------------    | 
+| URL         | `/services/deleteUser`   |
+| Metodo      | **POST**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"status":true,"data":{"msg":"Usuario eliminado con exito"}}`  |
+| Error Response | `{"status":false,"data":{"msg":"Faltan Parametros Obligatorios"}}`  |
+|                | `{"status":false,"data":{"msg":"Ha ocurrido un error"}}`  |
+
+_*Parametro obligatorio_
+
 | Titulo      | Inicio de Sesión  | 
 | :------------ |:---------------    | 
 | URL         | `/services/login`   |
