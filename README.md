@@ -10,7 +10,7 @@
 | Params(Body)  | `filial_id[int]*`    |
 |             | `email[string]*`     | 
 |             | `codigo[string]*`     |
-| Success Response | `{"status":true,"data":{"msg":"Cuenta creada exitosamente!!!"}}`  |
+| Success Response | `{"status":true,"data":{"msg":"Cuenta creada exitosamente!!!","token":"--"}}`  |
 | Error Response | `{"status":false,"data":{"msg":"Faltan Parametros Obligatorios"}}`  |
 |                | `{"status":false,"data":{"msg":"Ya existe una cuenta con esos datos"}}`  |
 |                | `{"status":false,"data":{"msg":"Ha ocurrido un error al crear la cuenta"}}`  |
