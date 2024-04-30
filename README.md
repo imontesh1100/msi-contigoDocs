@@ -359,7 +359,7 @@ _*Parametro obligatorio_
 | Titulo      | Guardar información | 
 | :------------ |:---------------    | 
 | URL         | `/services/setInformacion`   |
-| Metodo      | **GET**             |
+| Metodo      | **POST**             |
 | Headers         | `Authorization: token[string]`   |
 | Params(Body)    | `filial_id[int]*`    |
 |                 | `nombre[string]*`    |
