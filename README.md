@@ -343,3 +343,28 @@ _*Parametro obligatorio_
 |                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
 
 _*Parametro obligatorio_
+
+| Titulo      | Obtener información | 
+| :------------ |:---------------    | 
+| URL         | `/services/getInformacion`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)  | `---`    |
+| Success Response | `{"status":true,"data":{"nombre":"----","filial_id":-}}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
+
+| Titulo      | Guardar información | 
+| :------------ |:---------------    | 
+| URL         | `/services/setInformacion`   |
+| Metodo      | **GET**             |
+| Headers         | `Authorization: token[string]`   |
+| Params(Body)    | `filial_id[int]*`    |
+|                 | `nombre[string]*`    |
+| Success Response | `{"status":true,"data":{"msg":"Actualizacion completada"}}`  |
+| Error Response | `{"data":{"msg":"Ha ocurrido un error"},"status":false}`  |
+|                | `{"data":{"msg":"Token Incorrecto!!!"},"status":false}`  |
+
+_*Parametro obligatorio_
